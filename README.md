@@ -1,0 +1,1 @@
+Proje ObiletCase içerisinden açılmaktadır. Bir adet önyüz ve bir adet backend projesinden oluşmaktadır. Önyüz projesi ayağa kalkınca backend projeside ayağa kalkmaktadır. Backend projesi urline swagger yazınca swagger kısmıda açılmaktadır.
