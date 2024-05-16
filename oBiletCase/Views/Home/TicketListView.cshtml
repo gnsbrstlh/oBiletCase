@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Ticket List Page";
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Search Page</title>
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="min-width: 320px; min-height: 1070px; background-color:#F3F3F3">
+        <div style="min-width: 320px; min-height: 210px; background-color:#2F4EB4">
+            <button style="font-size:24px; padding-left:10px; padding-top:10px" class="btn" id="previousPageButton"><i class="fa fa-angle-left"></i></button>
+
+            <p style="text-align:center;vertical-align: middle; color:white; font-size:30px;">@ViewBag.CurrentBusLocationText</p>
+            <p style="text-align:center;vertical-align: middle; color:white; font-size:30px;">@ViewBag.DestinationLocationText</p>
+            <p style="text-align:center;vertical-align: middle; color:white; font-size:30px;">@ViewBag.Date</p>
+        </div>
+
+        @foreach (var ticket in ViewBag.Journeys)
+        {
+            <div style="margin:25px; border:2px solid #B4B4B4; height:150px">
+                <div style="display:flex; flex-direction:row; justify-content: space-between">
+                    <div style="flex: 1;text-align: left;">
+                        <div style="margin-bottom: 10px;">
+                            <p>KALKIŞ VARIŞ</p>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <p>@ticket.departure.ToString().Substring(11, 5)    @ticket.arrival.ToString().Substring(11, 5)</p>
+                        </div>
+                    </div>
+                    <div style="flex: 1;text-align: right; padding:20px">
+                        <p>@ticket.originalprice</p>
+                    </div>
+                </div>
+                <p>@ticket.origin - @ticket.destination</p>
+            </div>
+        }
+    </div>
+</body>
+<script>
+    document.getElementById("previousPageButton").addEventListener("click", function () {
+        window.history.back();
+    });
+</script>
+</html>
+

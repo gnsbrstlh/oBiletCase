@@ -1,0 +1,9 @@
+﻿@model PartialLocationModel
+<div style="height:200px; margin-left:45px; margin-right:45px; background-color:#FFFFFF">
+    <p style="padding-left: 90px; padding-top:30px; color:#2F4EB4; font-size:40px">Nereden</p>
+    <p style="padding-left:90px">
+        @Html.DropDownList(Model.locationId, ViewBag.CurrentBusLocation as SelectList, new { @class = "form-control" })
+        
+    </p>
+    <input type="text" id=@Model.locationText name=@Model.locationText value="" style="display:none" />
+</div>
