@@ -108,12 +108,13 @@ namespace oBiletCase.Controllers
                 }
             }
 
-            ViewBag.Journeys = journeys;
+            var sortedJourneysData = journeys.OrderBy(journey => journey.departure).ToList();
+            ViewBag.Journeys = sortedJourneysData;
         }
 
-        private string SerializeObject(object obj)
+        private string SerializeObject(object serializeObject)
         {
-            return JsonConvert.SerializeObject(obj);
+            return JsonConvert.SerializeObject(serializeObject);
         }
     }
 }

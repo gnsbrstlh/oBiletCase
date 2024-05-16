@@ -93,9 +93,9 @@ namespace oBiletCaseBackEnd.Controllers
             };
         }
 
-        private string SerializeObject(object obj)
+        private string SerializeObject(object serializeObject)
         {
-            return JsonConvert.SerializeObject(obj);
+            return JsonConvert.SerializeObject(serializeObject);
         }
     }
 }
